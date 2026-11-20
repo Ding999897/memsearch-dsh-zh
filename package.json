@@ -1,0 +1,60 @@
+{
+  "name": "@zilliz/memsearch-dsh",
+  "version": "0.1.10-zh.1",
+  "description": "DeepSeek Harness 的 MemSearch 插件：跨 agent 共享的 markdown 记忆，支持回合捕获、按需召回、memory-recall 技能，以及技能候选审阅面板。",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": {
+      "types": null,
+      "default": "./index.js"
+    },
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "runtime.js",
+    "client.js",
+    "cordis.patch.yml",
+    "prompts/",
+    "skills/",
+    "scripts/summarize.py",
+    "scripts/parse-transcript.py",
+    "scripts/derive-collection.sh",
+    "scripts/maintenance-runner.py"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zilliztech/memsearch",
+    "directory": "plugins/dsh"
+  },
+  "keywords": [
+    "memsearch",
+    "memory",
+    "deepseek-harness",
+    "cordis",
+    "plugin"
+  ],
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "test:integration": "node --test tests/maintenance.integration.js"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "dependencies": {
+    "cross-spawn": "^7.0.6"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-llm": "*"
+  }
+}
+

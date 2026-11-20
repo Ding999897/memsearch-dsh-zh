@@ -1,0 +1,18 @@
+# MemSearch 全局配置示例（放到 ~/.memsearch/config.toml，即 C:\Users\<你的用户名>\.memsearch\config.toml）
+#
+# 说明：
+# 1. [prompts] 让插件改用 extras/global-prompts/ 里的中文强制提示词。这些提示词在
+#    插件升级、被 npm 覆盖之后依然生效，因为它放在用户目录而不是插件目录里。
+# 2. [embedding] 用本地 onnx 模型，不需要 API key。首次运行需要下载模型；
+#    如果 huggingface.co 直连不通，可以先在别处下载后按 HF 缓存布局手工放置
+#    （models--Xenova--bge-m3/refs/main + snapshots/<rev>/）。
+
+[prompts]
+summarize = "C:\\Users\\<你的用户名>\\.memsearch\\prompts\\summarize.txt"
+project_review = "C:\\Users\\<你的用户名>\\.memsearch\\prompts\\project_review.txt"
+user_profile = "C:\\Users\\<你的用户名>\\.memsearch\\prompts\\user_profile.txt"
+memory_to_skill = "C:\\Users\\<你的用户名>\\.memsearch\\prompts\\memory_to_skill.txt"
+
+[embedding]
+provider = "onnx"
+model = "Xenova/bge-m3"
