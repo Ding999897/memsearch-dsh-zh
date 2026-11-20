@@ -40,7 +40,8 @@
   ],
   "scripts": {
     "test": "node --test tests/*.test.js",
-    "test:integration": "node --test tests/maintenance.integration.js"
+    "test:integration": "node --test tests/maintenance.integration.js",
+    "check:markdown": "node .github/scripts/check-markdown.mjs"
   },
   "dsh": {
     "bundle": {

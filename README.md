@@ -262,11 +262,11 @@ dsh plugin --profile web remove @zilliz/memsearch-dsh
   `/plugins/<id>/client.js` 提供的惰性 CJS 表），并导出 Cordis 客户端插件形态
   （`inject` + `apply`）。它按原样提交；请直接编辑它并保持 `__ModuleLoader__`
   注册格式（参照随包发布的 `@deepseek-ai/dsh-client-ui-*` `lib/client.js` bundle）。
-- `scripts/` 下的 Python helper 使用仓库的 `ruff` 配置做 lint，并在
-  `plugins/dsh/tests/` 下测试。
+- `scripts/` 下的 Python helper 在上游仓库里用 `ruff` 配置做 lint，并在上游
+  `plugins/dsh/tests/` 下测试（本仓库只翻译文案，未改动这些脚本）。
 - 保持记忆写入格式与其他平台插件字节级兼容；共享的标题与 transcript 锚点格式
-  参见 [`scripts/capture.py`](../opencode/scripts/capture.py) 中的 OpenCode
-  journal writer。
+  参见上游仓库的 OpenCode journal writer：
+  [`opencode/scripts/capture.py`](https://github.com/zilliztech/memsearch/blob/main/opencode/scripts/capture.py)。
 
 ### 命令设置
 

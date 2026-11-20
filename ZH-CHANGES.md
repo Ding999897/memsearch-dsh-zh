@@ -41,6 +41,17 @@ JSON 键、命令、路径、占位符（`{{QUERY}}`、`{{COLLECTION}}`、`{{MEM
   **这样即使插件被 npm 升级覆盖，中文输出仍然生效**——推荐与插件本体一起使用。
 - `config.toml.example`：嵌入模型与提示词路径示例（`onnx` + `Xenova/bge-m3`，无需 API key）。
 
+## 校验
+
+仓库自带一个不依赖网络的文档检查脚本，翻译或改文档后跑一次：
+
+```bash
+node .github/scripts/check-markdown.mjs   # 或 npm run check:markdown
+```
+
+它会检查：所有 `.md` 不得带 UTF-8 BOM（带 BOM 的 `package.json` 会让 `JSON.parse` 直接失败）、
+代码围栏必须成对、Markdown 里的相对链接必须指向仓库中真实存在的路径、根目录 JSON 必须可解析。
+
 ## 需要注意
 
 - 摘要后端 `summarizeMode=dsh-headless` 需要两样东西：`dsh` CLI 可执行，以及一个可用的模型凭据
